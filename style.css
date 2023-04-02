@@ -1,0 +1,377 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Merriweather Sans", sans-serif;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --colorDark1: #112d4e;
+  --colorDark2: #3f72af;
+  --colorLight1: #dbe2ef;
+  --colorLight2: #f9f7f7;
+}
+
+#wrapper {
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-image: linear-gradient(160deg, #112d4e 0%, #3f72af 100%);
+  background-image: url('https://images.unsplash.com/photo-1621274403997-37aace184f49?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1');
+  background-size: cover;
+  background-repeat: round;
+  color: var(--colorLight2);
+  position: relative;
+}
+
+.fadeLoad {
+  position: absolute;
+  left: 45%;
+  top: 30%;
+  opacity: 1;
+}
+
+.container {
+  width: 90%;
+  height: 95%;
+  max-width: 560px;
+  margin: 0 auto;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 5%;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.352);
+}
+
+h1,
+.main_heading {
+  color: var(--colorLight2);
+  text-decoration: none;
+  margin-bottom: 2.5rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.tab-container {
+  display: flex;
+  gap: 15rem;
+}
+
+.tab-container p {
+  cursor: pointer;
+  font-size: 0.875rem;
+  letter-spacing: 1.75px;
+  padding: 5px 8px;
+  width: 100%;
+  /* margin-left: 50px; */
+  white-space: nowrap;
+}
+
+.currentTab {
+  background-color: rgba(219, 226, 239, 0.5);
+  border-radius: 4px;
+  padding: 4px;
+  border-radius: 4px;
+}
+.tabEdit{
+  position: relative;
+}
+
+.grantLocationScreen {
+  display: none;
+  margin-top: 4rem;
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  z-index: 101;
+  opacity: 1;
+}
+
+.grantLocationScreen button {
+  padding: 15px 20px;
+  background-color: var(--colorDark2);
+  border: none;
+  color: var(--colorLight2);
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.loadingScreen {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.userWeatherScreen {
+  position: relative;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 12px;
+  width: 100%;
+}
+
+.UpdateWeat {
+  display: none;
+  position: absolute;
+  top: 20%;
+  left: 105%;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.userWeatherScreen .city {
+  display: flex;
+  font-size: 1.4rem;
+  gap: 10px;
+}
+.userWeatherScreen .condition {
+  font-size: 1.1rem;
+}
+.conditionImg{
+  margin-top: -12px;
+  margin-bottom: -23px;
+}
+.temp{
+  font-size: 1.8rem;
+  margin: 8px 0 10px 0;
+  margin: 8px 0 10px 0;
+  font-weight: bold;
+}
+.userWeatherScreen .threeDiv {
+  width: 100%;
+  display: flex;
+  /* flex-direction: column; */
+  /* flex-wrap: wrap; */
+  gap: 20px;
+}
+
+.statDiv {
+  margin: 0 auto;
+  width: 30%;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 20px;
+  background-color: rgba(219, 226, 239, 0.5);;
+}
+
+.statDiv img{
+  width: 35px;
+  height: 35px;
+}
+.statDiv p:nth-child(3){
+  font-size: 12px;
+}
+
+.searchWeatherScreen {
+  display: none;
+  flex-direction: column;
+  margin-top: 2rem;
+  width: 90%;
+}
+.searchWeatherScreen form{
+  display: flex;
+  gap: 10px;
+}
+
+.searchWeatherScreen input {
+  all:unset;
+  height:40px;
+  width: calc(100% - 80px);
+  padding: 0 20px;
+  background-color:rgba(219, 226, 239, 0.5);
+  border-radius: 10px;
+}
+
+.searchWeatherScreen input::placeholder {
+  /* font-size: 50px; */
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.searchWeatherScreen input:focus{
+  outline: 3px solid rgba(255, 255, 255, 0.7);
+}
+
+.searchWeatherScreen .searchButton{
+  all: unset;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding:unset;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  margin-bottom:1px;
+  background-color: var(--colorDark2);
+}
+
+.not-found {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+}
+.forSpeak{
+  position: relative;
+}
+.speakWeat {
+  display: none;
+  position: absolute;
+  top: 5%;
+  left: 115%;
+  cursor: pointer;
+}
+
+.newsDiv {
+  display: none;
+  flex-direction: column;
+  height: 100%;
+  width: 300px;
+  overflow-y: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: 2px solid white;
+  padding: 20px;
+}
+
+.newsDiv h3 {
+  position: fixed;
+  /* margin-bottom: 20px; */
+  top: 2%;
+  font-weight: bold;
+}
+.newsAdd:nth-child(2){
+  margin-top: 2rem;
+}
+
+.newsHead {
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.newsHead:hover {
+  color: lightskyblue;
+  text-decoration: underline;
+}
+
+.newsDesc {
+  margin-top: 5px;
+  color: gray;
+  font-size: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid white;
+}
+
+.timeDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.timeDiv p {
+  margin-top: 8px;
+}
+
+.adviceDiv {
+  display: none;
+  position: absolute;
+  bottom: -20%;
+  left: 30%;
+  background-color: rgba(219, 226, 239, 0.5);;
+  padding: 12px;
+  border-radius: 25px;
+  overflow-x: hidden;
+}
+
+.adviceDiv.active {
+  display: inline-block;
+}
+
+.advice {
+  white-space: nowrap;
+  position: relative;
+  left: 60%;
+  top: 0;
+  animation: slider 8s 1s infinite linear;
+}
+
+@keyframes slider {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 0%;
+  }
+  100% {
+    left: 105%;
+  }
+}
+
+.active {
+  display: flex;
+}
+
+@media (max-width: 1150px) {
+  .newsDiv{
+    top: 60%;
+    left: 35%;
+    height: 300px;
+  }
+  .newsDiv h3{
+    position: static;
+  }
+  .newsAdd:nth-child(2){
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .userWeatherScreen .threeDiv {
+    flex-direction: column;
+  }
+  .newsDiv{
+    top: 50%;
+    left: 0%;
+    height: 500px;
+    width: 130px;
+    padding: 10px;
+  }
+
+  .tab-container {
+    gap: 5rem;
+  }
+
+  .cityTime{
+   font-size: 14px; 
+  }
+  .localTime{
+    font-size: 10px;
+  }
+
+  .adviceDiv{
+    bottom: -10%;
+    left: 32%;
+    width: 200px;
+  }
+
+}
+
+

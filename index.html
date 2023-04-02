@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temp Clue - Know your live weather</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /></head>
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+<body>
+    <div id="wrapper">
+        <!-- container -->
+        <div class="container">
+            <h1><a class="main_heading" href="/">Weather App</a></h1>
+            <div class="tab-container">
+                <div class="tabEdit">
+                    <p class="firstTab">Your Weather</p>
+                    <span class="UpdateWeat"><i class="fa-sharp fa-solid fa-rotate-right"></i></span>
+                </div>
+                <p class="secondTab ">Search Weather</p>
+            </div>
+
+            <div class="grantLocationScreen">
+                <img src="./assets/location.png" alt="" height="80px" width="80px">
+                <h2>Grant Location Access</h2>
+                <p>Allow Access To Get Weather Information</p>
+                <button class="GrantAccessBtn">Grant Access</button>
+            </div>
+            
+            <div class="searchWeatherScreen ">
+                <form class="searchForm">
+                    <input class="inputSearch" type="text" placeholder="Search for city...">
+                    <button type="submit" class="searchButton">
+                        <img src="./assets/search.png"  width="20" height="20" loading="lazy">
+                    </button>
+                </form>
+            </div>
+            
+            <!-- <div class="loadingScreen ">
+                <img src="assets/loading.gif" alt="" width="100px" height="100px">
+                <p class="loadingText">Loading</p>
+            </div> -->
+
+            <div class="not-found">
+                <img src="https://codehelp-weather-app.netlify.app/assets/not-found.png" alt="" height="300px" width="300px">
+                <p>City Not Found</p>
+            </div>
+            
+            <div class="userWeatherScreen ">
+                <div class="city">
+                    <p class="cityName">CityName</p>
+                    <div class="forSpeak">
+                        <img class="flag" src="https://flagcdn.com/144x108/in.png" alt="" height="20px" width="20px">
+                        <img class="speakWeat" src="./assets/volume.png" alt="" height="20px" width="20px">
+                    </div>
+                </div>
+                <p class="condition">Condition</p>
+                <img class="conditionImg" src="https://openweathermap.org/img/w/50d.png" alt="" height="70px" width="70px">
+                <p class="temp">temp</p>
+                <div class="threeDiv">
+                    <div class="statDiv">
+                        <img src="assets/wind.png" alt="" height="20px" width="20px">
+                        <p>WINDSPEED</p>
+                        <p class="windSpeed">stat</p>
+                    </div>
+                    <div class="statDiv">
+                        <img src="assets/humidity.png" alt="" height="20px" width="20px">
+                        <p>HUMIDITY</p>
+                        <p class="humidity">stat</p>
+                    </div>
+                    <div class="statDiv">
+                        <img src="assets/cloud.png" alt="" height="20px" width="20px">
+                        <p>CLOUDS</p>
+                        <p class="cloud">stat</p>
+                    </div>
+                    <div class="adviceDiv">
+                        <p class="advice">som</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="loadingScreen fadeLoad">
+            <img src="assets/loading.gif" alt="" width="100px" height="100px">
+            <p class="loadingText">Loading</p>
+        </div>
+
+        <div class="newsDiv">
+            <h3 class="h3head">Weather News of Location</h3>
+            <!-- <div class="newsAdd">
+                <a class="newsHead" href="https://weather.com/en-IN/india/news/news/2023-02-24-heres-why-bengaluru-residents-have-been-experiencing-tiny-shocks" target="_blank">Here's Why Bengaluru Residents Have Been Experiencing Tiny ...</a>
+                <p class="newsDesc">Feb 24, 2023 ... If you live in Bengaluru and tiny shocks have been driving you absolutely ... journalistic mission is to report on breaking weather news, ...</p>
+            </div> -->
+        </div>
+
+        <div class="timeDiv">
+            <h2 class="cityTime">Live Time</h2>
+            <p class="localTime"></p>
+        </div>
+
+    </div>
+
+    <script src="index.js"></script>
+    <!-- <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script> -->
+</body>
+
+</html>
